@@ -205,7 +205,7 @@ span {
     /* background-color: red; */
   border-radius: 12px;
   transition: transform 0.2s ease;
-  height: 70vh;
+  height: 50vh;
   will-change: transform;
   transform-style: preserve-3d;
     box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
