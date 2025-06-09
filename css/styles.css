@@ -639,6 +639,7 @@ textarea{
     /* align-items: center; */
     /* justify-content: center; */
     gap: 5rem;
+      margin: auto auto;
   }
   .about-content h2 {
     text-align: center;
