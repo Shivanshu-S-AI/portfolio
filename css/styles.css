@@ -611,3 +611,12 @@ span {
     z-index: 0;
     pointer-events: auto;
 }
+
+#interactiveText span
+{
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(.25,1.7,.45,.87);
+  will-change: transform;
+  pointer-events: auto;
+  color: inherit;
+}
