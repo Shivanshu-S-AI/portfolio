@@ -150,3 +150,36 @@ particlesJS('particles-js', {
   container.addEventListener("mouseleave", () => {
     image.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
   });
+
+
+window.addEventListener('DOMContentLoaded', function() {
+  (function() {
+    const p = document.getElementById('interactiveText');
+    if (!p) return;
+    // Normalize whitespace: replace all whitespace (including newlines) with a single space
+    const text = p.textContent.replace(/\s+/g, ' ').trim();
+    p.innerHTML = '';
+    for (let char of text) {
+      const span = document.createElement('span');
+      span.textContent = char === ' ' ? '\u00A0' : char;
+      p.appendChild(span);
+    }
+    p.addEventListener('mousemove', function(e) {
+      const spans = p.querySelectorAll('span');
+      spans.forEach(span => {
+        const rect = span.getBoundingClientRect();
+        const dx = e.clientX - (rect.left + rect.width / 2);
+        const dy = e.clientY - (rect.top + rect.height / 2);
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 50) {
+          span.style.transform = `scale(${1.3 - dist/200})`;
+        } else {
+          span.style.transform = '';
+        }
+      });
+    });
+    p.addEventListener('mouseleave', function() {
+      p.querySelectorAll('span').forEach(span => span.style.transform = '');
+    });
+  })();
+});
