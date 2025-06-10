@@ -60,7 +60,9 @@ section {
     font-weight: 600;
     cursor: default;
 }
-
+.navbar {
+  transition: all 1s ease;
+}
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
