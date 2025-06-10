@@ -92,12 +92,16 @@ section {
 
 /* HOME SECTION  */
 .home {
+    /* z-index: 3; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.home-content {
+    z-index: 2;
+}
 .home-content h3 {
     font-size: 3.2rem;
     font-weight: 700;
@@ -606,9 +610,14 @@ textarea{
 
 }
 
-.home-content,
+.home-content ,
 .home-img {
     pointer-events: none;
+}
+
+.home-content a,
+.home-content button {
+    pointer-events:all;
 }
 
 @media (max-width: 775px) {
